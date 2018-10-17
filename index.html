@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <Style type="text/css">
+    body{
+		padding:200px;
+		color:orangered;
+	}
+	span{
+		font-size: 80px;
+		font-family: "微软雅黑";
+		position: relative;
+	}
+	span:before,span:after{
+		content:attr(data-q);
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		transform-origin: right center;
+		transition:all 0.3s linear 0s;
+	}
+	span:before{
+		color:#fff;
+		z-index: 3;
+		transform:rotateY(15deg);
+	}
+	span:after{
+		color:rgba(0,0,0,0.3);
+		z-index:2;
+		transform: rotateY(0deg) scale(1.1, 1);
+	}
+	span:hover:before{
+		transform:rotateY(40deg) skew(0deg, 3deg);
+	}
+	span:hover:after{
+		transform:rotateY(40deg) skew(0deg,20deg);
+	}
+    </Style>
+</head>
+<body>
+    <span data-q="人">人</span>
+	<span data-q="民">民</span>
+	<span data-q="代">代</span>
+	<span data-q="表">表</span>
+	<span data-q="大">大</span>
+	<span data-q="会">会</span>
+</body>
+</html>
